@@ -1,10 +1,9 @@
 from time import  time
-from multiprocessing import  Process, cpu_count, RLock, Pool
-
-lock = RLock()
+from multiprocessing import  cpu_count, Pool
 
 
-def factorize(list_numbers, locking = lock ):
+
+def factorize(list_numbers):
     new_list = []
     for number in list_numbers:
         new_list.append([x for x in range(1, number + 1) if number % x == 0])
